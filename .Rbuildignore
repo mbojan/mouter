@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 Makefile
 README.Rmd
+man-roxygen
