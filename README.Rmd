@@ -1,0 +1,53 @@
+# `mouter()`: a generalization of `outer()`
+
+
+```{r setup, include=FALSE}
+library(mouter)
+
+knitr::opts_chunk$set(
+  echo = TRUE,
+  error = FALSE
+  )
+
+knitr::render_markdown(strict=FALSE)
+```
+
+Function `mouter::mouter()` generalizes (a bit) `base::outer()` so that it can be conviniently used to build joint frequency distributions from several marginal distributions.
+
+## Examples
+
+We call `mouter` with a collection of vertices and arrays. They will correspond to margins. Say:
+
+
+```{r}
+# As an array
+a <- mouter(
+  A = c(a=1, b=2) / 3,
+  M = matrix(1:4 / 10, 2, 2, dimnames=list(D=letters[5:6], E=letters[7:8])),
+  B = c(c=2, d=3) / 5,
+  retval="a"
+)
+
+str(a)
+```
+
+Alternatively, `mouter` can return a data frame:
+
+```{r}
+# Data frame
+mouter(
+  A = c(a=1, b=2) / 3,
+  M = matrix(1:4 / 10, 2, 2, dimnames=list(D=letters[5:6], E=letters[7:8])),
+  B = c(c=2, d=3) / 5,
+  retval="df"
+)
+```
+
+
+
+
+## Installation
+
+```{r eval=FALSE}
+devtools::install_github("mbojan/mouter")
+```
