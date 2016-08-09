@@ -1,4 +1,4 @@
 library(testthat)
-library(mouter)
+library("mouter")
 
 test_package("mouter")
