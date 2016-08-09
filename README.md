@@ -12,7 +12,7 @@ Function `mouter::mouter()` generalizes (a bit) `base::outer()` so that it can b
 
 ## Examples
 
-We call `mouter` with a collection of vertices and arrays. They will correspond to margins. Say:
+We call `mouter` with a collection of vectors and/or arrays. They will correspond to margins. Say:
 
 
 
