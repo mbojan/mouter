@@ -1,5 +1,10 @@
 # `mouter()`: a generalization of `outer()`
 
+[![Build Status](https://travis-ci.org/mbojan/mouter.png?branch=master)](https://travis-ci.org/mbojan/mouter)
+[![Build Status](https://ci.appveyor.com/api/projects/status/jx5l79fg7pqbdj9o?svg=true)](https://ci.appveyor.com/project/mbojan/mouter)
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/mouter?color=2ED968)](http://cranlogs.r-pkg.org/)
+[![cran version](http://www.r-pkg.org/badges/version/mouter)](https://cran.r-project.org/package=mouter)
+
 
 ```{r setup, include=FALSE}
 library(mouter)
