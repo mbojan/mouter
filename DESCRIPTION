@@ -4,6 +4,7 @@ Title: Generalization of outer
 Version: 0.1-0
 Authors@R: person("Michal", "Bojanowski", role=c("aut", "cre"), email="michal2992@gmail.com")
 Description: Generalization of outer
+Suggests: testthat
 License: MIT + file LICENSE
 LazyData: TRUE
 RoxygenNote: 5.0.1

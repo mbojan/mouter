@@ -3,8 +3,10 @@
 #' Given a list of vector or arrays applie \code{\link{outer}} consecutively.
 #'
 #' @param ... vectors or matrices
-#' @param retval character, whether to return a data frame (\code{"df"}) or array (\code{"array"})
-#' @param freq_var character scalar, when returning a data frame this will be the name of the variable containing cell values
+#' @param retval character, whether to return a data frame (\code{"df"}) or
+#'   array (\code{"array"})
+#' @param freq_var character scalar, when returning a data frame this will be
+#'   the name of the variable containing cell values
 #'
 #' Given the list of vectors and/or arrays \code{\link{outer}} is used to
 #' combine the elements one-by-one (using \code{\link{Reduce}}).
@@ -14,7 +16,7 @@
 #' outer product of elements supplied through \code{...}.
 #'
 #' @export
-# @example man-roxygen/mouter.R
+#' @example man-roxygen/mouter.R
 
 mouter <- function(...,
                    retval=c("df", "array"),
