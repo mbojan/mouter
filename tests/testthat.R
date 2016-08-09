@@ -1,4 +1,4 @@
 library(testthat)
 library("mouter")
 
-test_package("mouter")
+test_check("mouter")
