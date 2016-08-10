@@ -4,7 +4,7 @@
 \alias{mouter}
 \title{A generalization of base::outer()}
 \usage{
-mouter(..., retval = c("df", "array"), freq_var = "n")
+mouter(..., retval = c("tibble", "df", "array"), responseName = "n")
 }
 \arguments{
 \item{...}{vectors or matrices}
@@ -12,7 +12,7 @@ mouter(..., retval = c("df", "array"), freq_var = "n")
 \item{retval}{character, whether to return a data frame (\code{"df"}) or
 array (\code{"array"})}
 
-\item{freq_var}{character scalar, when returning a data frame this will be
+\item{responseName}{character scalar, when returning a data frame this will be
   the name of the variable containing cell values
 
 Given the list of vectors and/or arrays \code{\link{outer}} is used to

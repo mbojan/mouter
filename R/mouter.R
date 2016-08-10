@@ -5,7 +5,7 @@
 #' @param ... vectors or matrices
 #' @param retval character, whether to return a data frame (\code{"df"}) or
 #'   array (\code{"array"})
-#' @param freq_var character scalar, when returning a data frame this will be
+#' @param responseName character scalar, when returning a data frame this will be
 #'   the name of the variable containing cell values
 #'
 #' Given the list of vectors and/or arrays \code{\link{outer}} is used to
@@ -19,8 +19,8 @@
 #' @example man-roxygen/mouter.R
 
 mouter <- function(...,
-                   retval=c("df", "array"),
-                   freq_var="n") {
+                   retval=c("tibble", "df", "array"),
+                   responseName="n") {
   retval <- match.arg(retval)
   args <- list(...)
 
@@ -46,9 +46,8 @@ mouter <- function(...,
   names(dimnames(rval)) <- unlist(var_names(args))
 
   # Return
-  if(retval == "df") {
-    rval <- as.data.frame(as.table(rval), stringsAsFactors=FALSE)
-    names(rval)[length(rval)] <- freq_var
-  }
-  return(rval)
+  switch(retval,
+         array = rval,
+         asdf(rval, retval=retval, responseName=responseName)
+         )
 }
