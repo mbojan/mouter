@@ -2,6 +2,10 @@ context("Testing basics of mouter()")
 
 
 
+test_that("mouter works for vectors/matrices without (dim)names", {
+  r <- mouter(c(1:2), c(2,1), matrix(1:4, 2, 2))
+})
+
 
 # TODO: Future feature
 test_that("mouter can be called with a list of vectors/matrices", {
