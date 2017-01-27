@@ -15,11 +15,16 @@ asdf <- function(x, responseName="n", add_dimnames=FALSE,
                  retval=c("tibble", "df"), ...) {
   stopifnot(is.array(x))
   retval <- match.arg(retval)
+  # construct df building call
   ex <- quote(
-    data.frame(do.call("expand.grid", c(
-      lapply(dim(x), seq),
-      KEEP.OUT.ATTRS = FALSE,
-      stringsAsFactors=FALSE
+    data.frame(
+      do.call("expand.grid", c(
+        structure(
+          lapply(dim(x), seq),
+          names = paste0(".dim", seq(1, length(dim(x))))
+          ),
+        KEEP.OUT.ATTRS = FALSE,
+        stringsAsFactors=FALSE
       ) ),
       Freq = c(x) )
   )
@@ -46,7 +51,7 @@ asdf <- function(x, responseName="n", add_dimnames=FALSE,
 
 
 if(FALSE) {
-  a <- array(1:8, dim=c(2,2,2), dimnames=list(r=letters[1:2], A=NULL, A=LETTERS[1:2]))
+  a <- array(1:8, dim=c(2,2,2), dimnames=list(r=letters[1:2], A=NULL, B=LETTERS[1:2]))
   asdf( a )
   asdf( as.table(a) )
   asdf(a, add_dimnames = TRUE)
