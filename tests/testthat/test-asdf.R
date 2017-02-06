@@ -104,10 +104,12 @@ dimnames(a) <- list(
 
 test_that("converted matrix has proper variables", {
   d <- asdf(m, add_dimnames = TRUE)
-  expect_true(
-    all(c(".dim1", "cols", "n") %in% names(d))
+  expect_equal(
+    c(".dim1", ".dim2", "n", "Var1", "cols"),
+    names(d)
   )
-  expect_true(
-    all( c("d1", "d2", ".dim3") %in% names(asdf(a, add_dimnames=TRUE)) )
+  expect_equal(
+    c(paste0(".dim", 1:3), "n", "d1", "d2", "Var3"),
+    names(asdf(a, add_dimnames=TRUE))
   )
 })
