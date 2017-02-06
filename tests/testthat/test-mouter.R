@@ -54,6 +54,6 @@ test_that("variables have proper names", {
   expect_identical( names(dimnames(a)), c("A", "D", "E", "B") )
 
   expect_identical( names(d),
-                    c( paste0("Var", seq(1, ncol(d)-1)), formals(mouter)$responseName) )
+                    c( paste0(".dim", seq(1, ncol(d)-1)), formals(mouter)$responseName) )
 
 })
